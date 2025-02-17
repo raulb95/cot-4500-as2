@@ -49,3 +49,54 @@ print("---------------------------------------------------------------------")
 
 
 # Question 3
+result = 0
+for i in range(len(poly)): 
+    term = poly[i] 
+    for j in range(i): 
+        term = term * (7.3 - x[j]) 
+    result += term 
+
+print("Question 3")
+print(result)
+print("---------------------------------------------------------------------")
+
+
+
+# Question 4
+
+"""x = np.array([3.6, 3.8, 3.9])
+f = np.array([1.675, 1.436, 1.318])
+df = np.array([-1.195, -1.118, -1.182])"""
+
+print("Question 4")
+print("---------------------------------------------------------------------")
+
+
+
+# Question 5
+x_data = np.array([2, 5, 8, 10])
+y_data = np.array([3, 5, 7, 9])
+
+n = len(x_data)
+A = np.zeros((n, n))
+A[0, 0] = 1
+A[n-1, n-1] = 1
+for i in range(1, n-1):
+    A[i, i-1] = x_data[i] - x_data[i-1]
+    A[i, i] = 2 * (x_data[i+1] - x_data[i-1])
+    A[i, i+1] = x_data[i+1] - x_data[i]
+
+b = np.zeros(n)
+for i in range(1, n-1):
+    b[i] = 3 * (y_data[i+1] - y_data[i]) / (x_data[i+1] - x_data[i]) - \
+           3 * (y_data[i] - y_data[i-1]) / (x_data[i] - x_data[i-1])
+
+x = np.linalg.solve(A, b)
+
+print("Question 5")
+print("A:")
+print(A)
+print("B:")
+print(b)
+print("C:")
+print(x)
