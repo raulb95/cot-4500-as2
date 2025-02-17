@@ -23,7 +23,7 @@ y_values = [1.675, 1.436, 1.318]
 interpolated_value = neville_interpolation(x_values[:3], y_values[:3], 3.7)
 
 print("Question 1")
-print(f"2nd degree interpolating value for f(3.7): {interpolated_value}")
+print("2nd degree interpolating value for f(3.7):", (interpolated_value))
 print("---------------------------------------------------------------------")
 
 
